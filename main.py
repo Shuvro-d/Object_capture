@@ -47,5 +47,4 @@ def detect_object(image):
         cv2.waitKey(0)
 
 
-image=cv2.imread("3.jpg")
-detect_object(image)
+#detect_object(image)
