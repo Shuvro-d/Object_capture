@@ -33,18 +33,4 @@ def detect_object(image):
     k2 = image[y2:y2 + h2, x2:x2 + w2]
     k1 = cv2.resize(k1, (640, 640))
     k2 = cv2.resize(k2, (640, 640))
-    l=len(sorteddata)
-    for i in range(l):
-        if i>=5:
-            break
-        c = sorteddata[i][1]
-        x1, y1, w1, h1 = cv2.boundingRect(c)
-        cv2.drawContours(image, c, -1, (0, 0, 0), 2)
-        cv2.rectangle(image, (x1, y1), (x1 + w1, y1 + h1), (0, 0, 0), 2)
-        k = image[y1:y1 + h1, x1:x1 + w1]
-        k = cv2.resize(k, (640, 640))
-        cv2.imshow(f"image {i}", k)
-        cv2.waitKey(0)
-
-
-#detect_object(image)
+    return k1
